@@ -1,6 +1,6 @@
-package com.buuz135.item;
+package com.buuz135.salem.item;
 
-import com.buuz135.SalemMod;
+import com.buuz135.salem.SalemMod;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 

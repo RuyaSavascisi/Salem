@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.buuz135.salem.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "refmap": "salem.refmap.json",
+  "mixins": [
+    "LivingEntityRendererMixin",
+    "AttributeSupplierBuilderMixin",
+    "EntityMixin"
+  ],
+  "minVersion": "0.8"
+}

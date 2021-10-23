@@ -1,6 +1,6 @@
 package com.buuz135.forge;
 
-import com.buuz135.ExampleExpectPlatform;
+import com.buuz135.salem.ExampleExpectPlatform;
 import net.minecraftforge.fml.loading.FMLPaths;
 
 import java.nio.file.Path;

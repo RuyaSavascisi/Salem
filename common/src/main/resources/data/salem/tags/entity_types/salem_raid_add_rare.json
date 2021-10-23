@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:cave_spider",
+    "minecraft:piglin_brute",
+    "minecraft:husk",
+    "minecraft:pillager",
+    "minecraft:stray"
+  ]
+}

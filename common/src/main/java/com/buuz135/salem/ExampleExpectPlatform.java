@@ -1,4 +1,4 @@
-package com.buuz135;
+package com.buuz135.salem;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import dev.architectury.platform.Platform;

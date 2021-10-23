@@ -1,6 +1,6 @@
 package com.buuz135.fabric;
 
-import com.buuz135.SalemMod;
+import com.buuz135.salem.SalemMod;
 import net.fabricmc.api.ModInitializer;
 
 public class SalemModFabric implements ModInitializer {

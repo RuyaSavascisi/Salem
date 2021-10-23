@@ -1,6 +1,6 @@
 package com.buuz135.forge;
 
-import com.buuz135.SalemMod;
+import com.buuz135.salem.SalemMod;
 import dev.architectury.platform.forge.EventBuses;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

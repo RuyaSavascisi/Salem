@@ -1,6 +1,6 @@
 package com.buuz135.fabric;
 
-import com.buuz135.ExampleExpectPlatform;
+import com.buuz135.salem.ExampleExpectPlatform;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.nio.file.Path;

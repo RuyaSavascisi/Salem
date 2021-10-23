@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:zombie",
+    "minecraft:creeper",
+    "minecraft:witch",
+    "minecraft:stray",
+    "minecraft:spider",
+    "minecraft:slime",
+    "minecraft:skeleton",
+    "minecraft:vex"
+  ]
+}
