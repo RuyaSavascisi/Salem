@@ -4,10 +4,11 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "salem.refmap.json",
   "mixins": [
+    "AbstractPiglinMixin",
     "AttributeSupplierBuilderMixin",
     "EntityMixin",
-    "LivingEntityRendererMixin",
-    "IZombieVillagerMixin"
+    "IZombieVillagerMixin",
+    "LivingEntityRendererMixin"
   ],
   "minVersion": "0.8"
 }

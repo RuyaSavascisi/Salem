@@ -3,6 +3,7 @@ package com.buuz135.forge;
 import com.buuz135.forge.datagen.ModItemModelProvider;
 import com.buuz135.salem.SalemMod;
 import dev.architectury.platform.forge.EventBuses;
+import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -19,7 +20,6 @@ public class SalemModForge {
 
     @SubscribeEvent
     public void dataGen(GatherDataEvent event){
-        System.out.println("DATA GEN");
         event.getGenerator().addProvider(new ModItemModelProvider(event.getGenerator(), SalemMod.MOD_ID, event.getExistingFileHelper()));
     }
 }
