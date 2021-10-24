@@ -3,6 +3,8 @@ package com.buuz135.salem;
 import com.buuz135.salem.command.SalemRaidCommand;
 import com.buuz135.salem.effect.EnlargeEffect;
 import com.buuz135.salem.effect.SalemMobEffect;
+import com.buuz135.salem.item.BoneShieldItem;
+import com.buuz135.salem.item.EternalFeastItem;
 import com.buuz135.salem.item.TrinketItem;
 import com.buuz135.salem.world.SalemRaidSavedData;
 import com.google.common.base.Suppliers;
@@ -29,6 +31,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.*;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -50,15 +53,16 @@ public class SalemMod {
     
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, Registry.ITEM_REGISTRY);
 
-    public static final RegistrySupplier<Item> TOME_OF_THE_DAMNED = ITEMS.register("tome_of_the_damned", () -> new TrinketItem(Rarity.EPIC));
-    public static final RegistrySupplier<Item> UNHALLOWED_CROSS = ITEMS.register("unhallowed_cross", () -> new TrinketItem(Rarity.EPIC));
-    public static final RegistrySupplier<Item> NIGHTMARISH_WINGS = ITEMS.register("nightmarish_wings", () -> new TrinketItem(Rarity.RARE));
-    public static final RegistrySupplier<Item> DEAHTLY_CHARGERS = ITEMS.register("deathly_chargers", () -> new TrinketItem(Rarity.RARE));
-    public static final RegistrySupplier<Item> CHILLING_AURA = ITEMS.register("chilling_aura", () -> new TrinketItem(Rarity.UNCOMMON));
-    public static final RegistrySupplier<Item> SCORCHING_AURA = ITEMS.register("scorching_aura", () -> new TrinketItem(Rarity.UNCOMMON));
-    public static final RegistrySupplier<Item> HELLISH_BARGAIN = ITEMS.register("hellish_bargain", () -> new TrinketItem(Rarity.UNCOMMON));
-    public static final RegistrySupplier<Item> BONE_SHIELD = ITEMS.register("bone_shield", () -> new TrinketItem(Rarity.COMMON));
-    public static final RegistrySupplier<Item> ETERNAL_FEAST = ITEMS.register("eternal_feast", () -> new TrinketItem(Rarity.COMMON));
+    public static final RegistrySupplier<Item> TOME_OF_THE_DAMNED = ITEMS.register("tome_of_the_damned_charm", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.LEGENDARY,Rarity.EPIC));
+    public static final RegistrySupplier<Item> UNHALLOWED_CROSS = ITEMS.register("unhallowed_cross_charm", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.LEGENDARY,Rarity.EPIC));
+    public static final RegistrySupplier<Item> NIGHTMARISH_WINGS = ITEMS.register("nightmarish_wings_back", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
+    public static final RegistrySupplier<Item> DEAHTLY_CHARGERS = ITEMS.register("deathly_chargers_feet", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
+    public static final RegistrySupplier<Item> WITHERING_TOUCH = ITEMS.register("withering_touch_hand", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
+    public static final RegistrySupplier<Item> CHILLING_AURA = ITEMS.register("chilling_aura_necklace", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.RARE,Rarity.UNCOMMON));
+    public static final RegistrySupplier<Item> SCORCHING_AURA = ITEMS.register("scorching_aura_ring", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.RARE,Rarity.UNCOMMON));
+    public static final RegistrySupplier<Item> HELLISH_BARGAIN = ITEMS.register("hellish_bargain_ring", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.RARE,Rarity.UNCOMMON));
+    public static final RegistrySupplier<Item> BONE_SHIELD = ITEMS.register("bone_shield_hand", () -> new BoneShieldItem(SalemRaidSavedData.SalemRaidTier.COMMON,Rarity.COMMON));
+    public static final RegistrySupplier<Item> ETERNAL_FEAST = ITEMS.register("eternal_feast_belt", () -> new EternalFeastItem(SalemRaidSavedData.SalemRaidTier.COMMON, Rarity.COMMON));
 
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(MOD_ID, Registry.ATTRIBUTE_REGISTRY);
 

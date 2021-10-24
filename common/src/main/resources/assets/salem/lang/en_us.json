@@ -1,5 +1,7 @@
 {
   "event.salem.raid.spawn": "Salem Raid Nearby",
   "event.salem.raid.clear": "Clear Nearby Enemies!",
-  "event.salem.raid.damage": "Attack the boss!"
+  "event.salem.raid.damage": "Attack the boss!",
+  "item.salem.eternal_feast_belt": "Belt of Eternal Feast",
+  "item.salem.bone_shield_hand": "Bone Shield"
 }

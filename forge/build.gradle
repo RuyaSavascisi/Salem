@@ -13,6 +13,9 @@ architectury {
 
 loom {
     forge{
+        dataGen {
+            mod "salem"
+        }
         mixinConfig "salem-common.mixins.json"
     }
 }

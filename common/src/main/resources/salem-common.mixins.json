@@ -4,9 +4,10 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "salem.refmap.json",
   "mixins": [
-    "LivingEntityRendererMixin",
     "AttributeSupplierBuilderMixin",
-    "EntityMixin"
+    "EntityMixin",
+    "LivingEntityRendererMixin",
+    "IZombieVillagerMixin"
   ],
   "minVersion": "0.8"
 }
