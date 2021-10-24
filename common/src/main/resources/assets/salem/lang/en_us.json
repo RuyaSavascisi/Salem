@@ -1,8 +1,11 @@
 {
+  "itemGroup.salem.salem_tab": "Salem",
   "event.salem.raid.spawn": "Salem Raid Nearby",
   "event.salem.raid.clear": "Clear Nearby Enemies!",
   "event.salem.raid.damage": "Attack the boss!",
   "item.salem.eternal_feast_belt": "Belt of Eternal Feast",
   "item.salem.bone_shield_hand": "Bone Shield",
-  "item.salem.hellish_bargain_ring": "Ring of Hellish Bargain"
+  "item.salem.hellish_bargain_ring": "Ring of Hellish Bargain",
+  "item.salem.scorching_aura_ring": "Ring of Scorching Aura",
+  "item.salem.chilling_aura_necklace": "Chilling Aura Necklace"
 }
