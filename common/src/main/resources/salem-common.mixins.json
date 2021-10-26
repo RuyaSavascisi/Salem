@@ -8,6 +8,7 @@
     "AttributeSupplierBuilderMixin",
     "EntityMixin",
     "IZombieVillagerMixin",
+    "LivingEntityMixin",
     "LivingEntityRendererMixin"
   ],
   "minVersion": "0.8"
