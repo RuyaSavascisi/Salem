@@ -55,7 +55,7 @@ public class SalemMod {
     public static final RegistrySupplier<Item> UNHALLOWED_CROSS = ITEMS.register("unhallowed_cross_charm", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.LEGENDARY,Rarity.EPIC));
     public static final RegistrySupplier<Item> NIGHTMARISH_WINGS = ITEMS.register("nightmarish_wings_back", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
     public static final RegistrySupplier<Item> DEAHTLY_CHARGERS = ITEMS.register("deathly_chargers_feet", () -> new DeathlyChargersItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
-    public static final RegistrySupplier<Item> WITHERING_TOUCH = ITEMS.register("withering_touch_hand", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
+    public static final RegistrySupplier<Item> WITHERING_TOUCH = ITEMS.register("withering_touch_hand", () -> new WitheringTouchItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
     public static final RegistrySupplier<Item> CHILLING_AURA = ITEMS.register("chilling_aura_necklace", () -> new ChillingAuraItem(SalemRaidSavedData.SalemRaidTier.RARE,Rarity.UNCOMMON));
     public static final RegistrySupplier<Item> SCORCHING_AURA = ITEMS.register("scorching_aura_ring", () -> new ScorchingAuraItem(SalemRaidSavedData.SalemRaidTier.RARE,Rarity.UNCOMMON));
     public static final RegistrySupplier<Item> HELLISH_BARGAIN = ITEMS.register("hellish_bargain_ring", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.RARE,Rarity.UNCOMMON));
