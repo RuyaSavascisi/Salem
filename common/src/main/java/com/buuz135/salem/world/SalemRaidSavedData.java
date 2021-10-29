@@ -1,6 +1,7 @@
 package com.buuz135.salem.world;
 
 import com.buuz135.salem.SalemMod;
+import com.buuz135.salem.item.TrinketItem;
 import com.buuz135.salem.util.BlockUtil;
 import com.google.common.collect.Sets;
 import net.minecraft.ChatFormatting;
@@ -14,6 +15,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.Tag;
 import net.minecraft.world.BossEvent;
+import net.minecraft.world.Containers;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -22,6 +24,7 @@ import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
 import net.minecraft.world.entity.monster.piglin.PiglinBrute;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.saveddata.SavedData;
@@ -122,6 +125,7 @@ public class SalemRaidSavedData extends SavedData {
         private boolean active;
         private int maxPlebs = 1;
         private CompoundTag originalNBT;
+        private boolean hasRemoved;
 
         public SalemRaid(UUID uuid, SalemRaidTier salemRaidTier) {
             this.active = true;
@@ -130,6 +134,7 @@ public class SalemRaidSavedData extends SavedData {
             this.salemRaidTier = salemRaidTier;
             this.plebSpawningTimer = 100;
             this.raidEvent = new ServerBossEvent(RAID_NAME_COMPONENT, BossEvent.BossBarColor.RED, BossEvent.BossBarOverlay.NOTCHED_10);
+            this.hasRemoved = false;
         }
 
         public Entity createBoss(ServerLevel level, BlockPos pos){
@@ -167,10 +172,15 @@ public class SalemRaidSavedData extends SavedData {
                 updateProgress();
                 if (this.boss.level.isDay()){
                     this.boss.remove(Entity.RemovalReason.DISCARDED);
+                    this.hasRemoved = true;
                 }
                 salemRaidSavedData.setDirty();
             }
             if (!this.boss.isAlive()){
+                if (!hasRemoved){
+                    ItemStack stack = new ItemStack(TrinketItem.TRINKETS.get(this.salemRaidTier).get(level.random.nextInt(TrinketItem.TRINKETS.get(this.salemRaidTier).size())));
+                    Containers.dropItemStack(level, this.boss.getX(), this.boss.getY(), this.boss.getZ(), stack);
+                }
                 stop();
                 salemRaidSavedData.setDirty();
             }
