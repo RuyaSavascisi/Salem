@@ -53,7 +53,7 @@ public class SalemMod {
 
     public static final RegistrySupplier<Item> TOME_OF_THE_DAMNED = ITEMS.register("tome_of_the_damned_charm", () -> new TomeOfTheDamnedItem(SalemRaidSavedData.SalemRaidTier.LEGENDARY,Rarity.EPIC));
     public static final RegistrySupplier<Item> UNHALLOWED_CROSS = ITEMS.register("unhallowed_cross_charm", () -> new UnhallowedCrossItem(SalemRaidSavedData.SalemRaidTier.LEGENDARY,Rarity.EPIC));
-    public static final RegistrySupplier<Item> NIGHTMARISH_WINGS = ITEMS.register("nightmarish_wings_back", () -> new TrinketItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
+    public static final RegistrySupplier<Item> NIGHTMARISH_WINGS = ITEMS.register("nightmarish_wings_back", () -> new NigthmarishWingsItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
     public static final RegistrySupplier<Item> DEAHTLY_CHARGERS = ITEMS.register("deathly_chargers_feet", () -> new DeathlyChargersItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
     public static final RegistrySupplier<Item> WITHERING_TOUCH = ITEMS.register("withering_touch_hand", () -> new WitheringTouchItem(SalemRaidSavedData.SalemRaidTier.EPIC,Rarity.RARE));
     public static final RegistrySupplier<Item> CHILLING_AURA = ITEMS.register("chilling_aura_necklace", () -> new ChillingAuraItem(SalemRaidSavedData.SalemRaidTier.RARE,Rarity.UNCOMMON));

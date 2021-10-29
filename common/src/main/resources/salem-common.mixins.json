@@ -9,7 +9,8 @@
     "EntityMixin",
     "IZombieVillagerMixin",
     "LivingEntityMixin",
-    "LivingEntityRendererMixin"
+    "LivingEntityRendererMixin",
+    "PlayerMixin"
   ],
   "minVersion": "0.8"
 }
