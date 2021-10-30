@@ -4,9 +4,11 @@ import com.buuz135.salem.command.SalemRaidCommand;
 import com.buuz135.salem.effect.EnlargeEffect;
 import com.buuz135.salem.effect.SalemMobEffect;
 import com.buuz135.salem.item.*;
+import com.buuz135.salem.util.InventoryFinderUtil;
 import com.buuz135.salem.world.SalemRaidSavedData;
 import com.google.common.base.Suppliers;
 import dev.architectury.event.EventResult;
+import dev.architectury.event.events.client.ClientTickEvent;
 import dev.architectury.event.events.common.CommandRegistrationEvent;
 import dev.architectury.event.events.common.EntityEvent;
 import dev.architectury.event.events.common.TickEvent;
@@ -15,10 +17,13 @@ import dev.architectury.registry.CreativeTabRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.Registries;
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -98,6 +103,19 @@ public class SalemMod {
         });
         CommandRegistrationEvent.EVENT.register((commandDispatcher, commandSelection) -> {
             SalemRaidCommand.register(commandDispatcher);
+        });
+    }
+
+    @Environment(EnvType.CLIENT)
+    public void onClient(){
+        ClientTickEvent.CLIENT_POST.register(minecraft -> {
+            if (minecraft.player == null) return;
+            ItemStack stack = InventoryFinderUtil.findFirst(minecraft.player, NIGHTMARISH_WINGS.get());
+            if (!stack.isEmpty()) {
+                if (minecraft.player.input.jumping && minecraft.player.getDeltaMovement().y < 0 && !minecraft.player.isOnGround() && !minecraft.player.isSwimming() && !minecraft.player.getAbilities().flying && !minecraft.player.isPassenger() && !minecraft.player.onClimbable()) {
+                    minecraft.player.connection.send(new ServerboundPlayerCommandPacket(minecraft.player, ServerboundPlayerCommandPacket.Action.START_FALL_FLYING));
+                }
+            }
         });
     }
 
