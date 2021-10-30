@@ -6,6 +6,7 @@
   "mixins": [
     "AbstractPiglinMixin",
     "AttributeSupplierBuilderMixin",
+    "CatRenderedMixin",
     "EntityMixin",
     "IZombieVillagerMixin",
     "LivingEntityMixin",
