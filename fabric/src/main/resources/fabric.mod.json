@@ -18,6 +18,9 @@
   "entrypoints": {
     "main": [
       "com.buuz135.fabric.SalemModFabric"
+    ],
+    "client": [
+      "com.buuz135.fabric.SalemModClientFabric"
     ]
   },
   "depends": {
