@@ -2,7 +2,6 @@
   "required": true,
   "package": "com.buuz135.salem.mixin",
   "compatibilityLevel": "JAVA_16",
-  "refmap": "salem.refmap.json",
   "mixins": [
     "AbstractPiglinMixin",
     "AttributeSupplierBuilderMixin",
