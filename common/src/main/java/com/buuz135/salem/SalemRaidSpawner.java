@@ -44,8 +44,12 @@ public class SalemRaidSpawner {
                                     BlockState blockstate = serverLevel.getBlockState(blockpos1);
                                     FluidState fluidstate = serverLevel.getFluidState(blockpos1);
                                     if (NaturalSpawner.isValidEmptySpawnBlock(serverLevel, blockpos1, blockstate, fluidstate, EntityType.ZOMBIE)) {
-                                        List<SalemRaidSavedData.SalemRaidTier> tiers = Arrays.asList(SalemRaidSavedData.SalemRaidTier.values()).subList(0, (int) (difficultyinstance.getEffectiveDifficulty() + 1.5));
-                                        SalemRaidSavedData.getData(serverLevel).startRaid(blockpos1, tiers.get(random.nextInt(tiers.size())));
+                                        List<SalemRaidSavedData.SalemRaidTier> tiers = Arrays.asList(SalemRaidSavedData.SalemRaidTier.values()).subList(0, Math.min((int) (difficultyinstance.getEffectiveDifficulty() + 1.5), SalemRaidSavedData.SalemRaidTier.values().length));
+                                        if (tiers.size() > 0){
+                                            SalemRaidSavedData.getData(serverLevel).startRaid(blockpos1, tiers.get(random.nextInt(tiers.size())));
+                                        } else {
+                                            SalemRaidSavedData.getData(serverLevel).startRaid(blockpos1, SalemRaidSavedData.SalemRaidTier.COMMON);
+                                        }
                                     }
                                 }
                             }
