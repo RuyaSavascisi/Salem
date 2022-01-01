@@ -23,6 +23,9 @@
       "com.buuz135.fabric.SalemModClientFabric"
     ]
   },
+  "mixins": [
+    "salem-common.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.12.8",
     "fabric": "*",

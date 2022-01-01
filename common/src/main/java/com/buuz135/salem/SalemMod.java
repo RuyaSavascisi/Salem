@@ -63,7 +63,8 @@ public class SalemMod {
 
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(MOD_ID, Registry.ATTRIBUTE_REGISTRY);
 
-    public static final RegistrySupplier<Attribute> ENLARGE_ATTRIBUTE = ATTRIBUTES.register("enlarge", () -> new RangedAttribute("salem.attribute.name.generic.enlarge", 1D, 0.1D, 1024.0D).setSyncable(true));
+    public static final Attribute ENLARGE_ATTR =  new RangedAttribute("salem.attribute.name.generic.enlarge", 1D, 0.1D, 1024.0D).setSyncable(true);
+    public static final RegistrySupplier<Attribute> ENLARGE_ATTRIBUTE = ATTRIBUTES.register("enlarge", () -> ENLARGE_ATTR) ;
 
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(MOD_ID, Registry.MOB_EFFECT_REGISTRY);
 

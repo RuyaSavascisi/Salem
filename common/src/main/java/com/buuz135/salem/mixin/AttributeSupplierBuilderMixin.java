@@ -15,8 +15,8 @@ public class AttributeSupplierBuilderMixin {
     @Inject(at = @At("HEAD"), method = "Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier$Builder;build()Lnet/minecraft/world/entity/ai/attributes/AttributeSupplier;")
     public void build(CallbackInfoReturnable<AttributeSupplier> cir) {
         try {
-            add(SalemMod.ENLARGE_ATTRIBUTE.get());
-        } catch (IllegalAccessException e) {
+            add(SalemMod.ENLARGE_ATTR);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
