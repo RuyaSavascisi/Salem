@@ -17,10 +17,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.buuz135.fabric.SalemModFabric"
+      "com.buuz135.salem.fabric.SalemModFabric"
     ],
     "client": [
-      "com.buuz135.fabric.SalemModClientFabric"
+      "com.buuz135.salem.fabric.SalemModClientFabric"
     ]
   },
   "mixins": [

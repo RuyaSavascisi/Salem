@@ -1,4 +1,4 @@
-package com.buuz135.forge;
+package com.buuz135.salem.forge;
 
 import com.buuz135.salem.ExampleExpectPlatform;
 import net.minecraftforge.fml.loading.FMLPaths;

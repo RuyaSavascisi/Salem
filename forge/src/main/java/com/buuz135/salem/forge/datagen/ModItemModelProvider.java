@@ -1,4 +1,4 @@
-package com.buuz135.forge.datagen;
+package com.buuz135.salem.forge.datagen;
 
 import com.buuz135.salem.item.TrinketItem;
 import net.minecraft.data.DataGenerator;

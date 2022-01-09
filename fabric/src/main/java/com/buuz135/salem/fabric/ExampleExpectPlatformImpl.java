@@ -1,4 +1,4 @@
-package com.buuz135.fabric;
+package com.buuz135.salem.fabric;
 
 import com.buuz135.salem.ExampleExpectPlatform;
 import net.fabricmc.loader.api.FabricLoader;

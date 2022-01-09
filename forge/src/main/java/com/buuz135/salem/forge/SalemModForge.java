@@ -1,6 +1,6 @@
-package com.buuz135.forge;
+package com.buuz135.salem.forge;
 
-import com.buuz135.forge.datagen.ModItemModelProvider;
+import com.buuz135.salem.forge.datagen.ModItemModelProvider;
 import com.buuz135.salem.SalemModClient;
 import com.buuz135.salem.SalemMod;
 import dev.architectury.platform.forge.EventBuses;
