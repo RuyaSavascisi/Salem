@@ -60,6 +60,7 @@ public class Salem
         modEventBus.addListener(this::commonSetup);
         SalemContent.ITEMS.register(modEventBus);
         SalemContent.DataComp.DATA_COMPONENTS.register(modEventBus);
+        SalemContent.Effect.EFFECT.register(modEventBus);
 
         CREATIVE_MODE_TABS.register(modEventBus);
 

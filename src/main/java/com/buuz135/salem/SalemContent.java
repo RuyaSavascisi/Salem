@@ -1,12 +1,19 @@
 package com.buuz135.salem;
 
 import com.buuz135.salem.item.DeathlyChargersFeetItem;
+import com.buuz135.salem.mob_effects.SalemMobEffects;
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -28,6 +35,16 @@ public class SalemContent {
 
         public static Supplier<DataComponentType<Long>> TIME = register("time", () -> -1L, op -> op.persistent(Codec.LONG));
 
+    }
+
+    public static class Effect {
+
+        public static final DeferredRegister<MobEffect> EFFECT = DeferredRegister.create(Registries.MOB_EFFECT, Salem.MODID);
+
+        public static DeferredHolder<MobEffect, MobEffect> ENLARGE_EFFECT = EFFECT.register("enlarge", () -> new SalemMobEffects(MobEffectCategory.BENEFICIAL, 3402751)
+                .addAttributeModifier(
+                        Attributes.SCALE, ResourceLocation.fromNamespaceAndPath(Salem.MODID, "enlarge"), 0.2F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
+                ));
     }
 
 
