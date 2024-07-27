@@ -3,7 +3,6 @@ package com.buuz135.salem;
 import com.buuz135.salem.item.*;
 import com.buuz135.salem.mob_effects.SalemMobEffects;
 import com.buuz135.salem.util.SalemRaidTier;
-import com.buuz135.salem.world.SalemRaidSavedData;
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.component.DataComponentType;
@@ -34,7 +33,8 @@ public class SalemContent {
     public static DeferredItem<Item> ETERNAL_FEAST_BELT = ITEMS.registerItem("eternal_feast_belt", properties -> new EternalFeastItem());
     public static DeferredItem<Item> NIGHTMARISH_WINGS_BACK = ITEMS.registerItem("nightmarish_wings_back", properties -> new NightmarishWingsItem());
     public static DeferredItem<Item> SCORCHING_AURA_RING = ITEMS.registerItem("scorching_aura_ring", properties -> new ScorchingAuraItem());
-    public static DeferredItem<Item> HELLISH_BARGAIN = ITEMS.register("hellish_bargain_ring", () -> new TrinketItem(Rarity.UNCOMMON, SalemRaidTier.RARE));
+    public static DeferredItem<Item> HELLISH_BARGAIN_RING = ITEMS.registerItem("hellish_bargain_ring", properties -> new TrinketItem(Rarity.UNCOMMON, SalemRaidTier.RARE));
+    public static DeferredItem<Item> TOME_OF_THE_DAMNED_CHARM = ITEMS.registerItem("tome_of_the_damned_charm", properties -> new TomeOfTheDamnedItem());
 
     public static class DataComp{
 
