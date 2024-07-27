@@ -54,6 +54,7 @@ public class Salem
             .icon(() -> SalemContent.DEATHLY_CHARGERS_FEET.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(SalemContent.DEATHLY_CHARGERS_FEET.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(SalemContent.BONE_SHIELD.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.

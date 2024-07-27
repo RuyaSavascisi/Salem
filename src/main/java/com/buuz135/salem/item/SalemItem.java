@@ -5,11 +5,10 @@ import net.minecraft.world.item.Item;
 
 public class SalemItem extends Item {
 
-    private final SalemRaidTier tier;
 
-    public SalemItem(Properties properties, SalemRaidTier tier) {
+    public SalemItem(Properties properties) {
         super(properties);
-        this.tier = tier;
+
     }
 
 }
