@@ -41,6 +41,7 @@ public class Salem
                 output.accept(SalemContent.DEATHLY_CHARGERS_FEET.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
                 output.accept(SalemContent.BONE_SHIELD_HANDS.get());
                 output.accept(SalemContent.CHILLING_AURA_NECKLACE.get());
+                output.accept(SalemContent.ETERNAL_FEAST_BELT.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.

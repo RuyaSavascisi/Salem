@@ -3,6 +3,7 @@ package com.buuz135.salem;
 import com.buuz135.salem.item.BoneShieldItem;
 import com.buuz135.salem.item.ChillingAuraItem;
 import com.buuz135.salem.item.DeathlyChargersFeetItem;
+import com.buuz135.salem.item.EternalFeastItem;
 import com.buuz135.salem.mob_effects.SalemMobEffects;
 import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
@@ -30,7 +31,7 @@ public class SalemContent {
     public static DeferredItem<Item> DEATHLY_CHARGERS_FEET = ITEMS.registerItem("deathly_chargers_feet", properties -> new DeathlyChargersFeetItem());
     public static DeferredItem<Item> BONE_SHIELD_HANDS = ITEMS.registerItem("bone_shield_hand", properties -> new BoneShieldItem());
     public static DeferredItem<Item> CHILLING_AURA_NECKLACE = ITEMS.registerItem("chilling_aura_necklace", properties -> new ChillingAuraItem());
-
+    public static DeferredItem<Item> ETERNAL_FEAST_BELT = ITEMS.registerItem("eternal_feast_belt", properties -> new EternalFeastItem());
 
 
     public static class DataComp{
