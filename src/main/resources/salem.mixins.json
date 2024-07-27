@@ -2,9 +2,10 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.buuz135.salem.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_21",
   "refmap": "Salem.refmap.json",
   "mixins": [
+    "CatRenderedMixin"
   ],
   "client": [
   ],

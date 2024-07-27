@@ -1,10 +1,11 @@
 {
   "replace": false,
   "values": [
-    "minecraft:piglin",
     "minecraft:blaze",
     "minecraft:phantom",
     "minecraft:magma_cube",
-    "minecraft:wither_skeleton"
+    "minecraft:wither_skeleton",
+    "minecraft:breeze",
+    "minecraft:illusioner"
   ]
 }

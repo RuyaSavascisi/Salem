@@ -40,11 +40,13 @@ public class SalemContent {
     public static class Effect {
 
         public static final DeferredRegister<MobEffect> EFFECT = DeferredRegister.create(Registries.MOB_EFFECT, Salem.MODID);
+        public static ResourceLocation ENLARGE_ATTRIBUTE = ResourceLocation.fromNamespaceAndPath(Salem.MODID, "enlarge");
 
         public static DeferredHolder<MobEffect, MobEffect> ENLARGE_EFFECT = EFFECT.register("enlarge", () -> new SalemMobEffects(MobEffectCategory.BENEFICIAL, 3402751)
                 .addAttributeModifier(
-                        Attributes.SCALE, ResourceLocation.fromNamespaceAndPath(Salem.MODID, "enlarge"), 0.2F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
+                        Attributes.SCALE, ENLARGE_ATTRIBUTE, 0.2F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
                 ));
+        public static DeferredHolder<MobEffect, MobEffect> SPAWN_EFFECT = EFFECT.register("spawn", () -> new SalemMobEffects(MobEffectCategory.BENEFICIAL, 3402751));
     }
 
 

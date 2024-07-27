@@ -7,6 +7,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.monster.breeze.Breeze;
 import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.level.Level;
 
@@ -20,21 +21,24 @@ public enum SalemRaidTier{
         } else {
             return new Skeleton(EntityType.SKELETON, level);
         }
-    }, new TagKey[]{SalemTags.RAID_ADD_COMMON}, 2), RARE(level -> {
+    }, new TagKey[]{SalemTags.RAID_ADD_COMMON}, 2),
+    RARE(level -> {
         if (level.random.nextDouble() > 2/3D){
             return new PiglinBrute(EntityType.PIGLIN_BRUTE, level);
         } else if (level.random.nextDouble() > 1/3D){
             return new Stray(EntityType.STRAY, level);
         }
         return new Husk(EntityType.HUSK, level);
-    }, new TagKey[]{ SalemTags.RAID_ADD_RARE,SalemTags.RAID_ADD_COMMON}, 3), EPIC(level -> {
+    }, new TagKey[]{ SalemTags.RAID_ADD_RARE,SalemTags.RAID_ADD_COMMON}, 3),
+    EPIC(level -> {
         if (level.random.nextDouble() > 2/3D){
             return new Ravager(EntityType.RAVAGER, level);
         } else if (level.random.nextDouble() > 1/3D){
             return new WitherSkeleton(EntityType.WITHER_SKELETON, level);
         }
-        return new Phantom(EntityType.PHANTOM, level);
-    }, new TagKey[]{SalemTags.RAID_ADD_EPIC, SalemTags.RAID_ADD_COMMON, SalemTags.RAID_ADD_RARE}, 4), LEGENDARY(level -> {
+        return new Breeze(EntityType.BREEZE, level);
+    }, new TagKey[]{SalemTags.RAID_ADD_EPIC, SalemTags.RAID_ADD_COMMON, SalemTags.RAID_ADD_RARE}, 4),
+    LEGENDARY(level -> {
         return new Cat(EntityType.CAT, level);
     }, new TagKey[]{SalemTags.RAID_ADD_LEGENDARY, SalemTags.RAID_ADD_COMMON, SalemTags.RAID_ADD_RARE, SalemTags.RAID_ADD_EPIC}, 8);
 
@@ -49,10 +53,21 @@ public enum SalemRaidTier{
     }
 
     public EntityType<?> getRandomSpawn(Level level){
-        /*if (level.random.nextBoolean() || this.spawns.length == 1){
-            return this.spawns[0].getRandomElement(level.random);
+        if (level.random.nextBoolean() || this.spawns.length == 1){
+            return level.registryAccess().registryOrThrow(Registries.ENTITY_TYPE).getRandomElementOf(this.spawns[0], level.random).get().value();
         }
-        return this.spawns[level.random.nextInt(this.spawns.length)].getRandomElement(level.random);*/
-        return null;
+        return level.registryAccess().registryOrThrow(Registries.ENTITY_TYPE).getRandomElementOf(this.spawns[level.random.nextInt(this.spawns.length)], level.random).get().value();
+    }
+
+    public Function<ServerLevel, Mob> getBossSupplier() {
+        return bossSupplier;
+    }
+
+    public TagKey<EntityType<?>>[] getSpawns() {
+        return spawns;
+    }
+
+    public int getTier() {
+        return tier;
     }
 }
