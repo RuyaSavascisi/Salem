@@ -7,6 +7,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
@@ -31,6 +32,7 @@ public class CommonEvents {
                 long speed = deathlyChargers.getOrDefault(SalemContent.DataComp.TIME, 0L);
                 if (speed > 0 && player.level() instanceof ServerLevel serverLevel){
                     serverLevel.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, player.getX(), player.getY() + 0.1, player.getZ(), 2, 0.2,0.1,0.2,0);
+                    if (speed > 5) serverLevel.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, player.getX(), player.getY() + 0.25, player.getZ(), 1, 0.2,0.1,0.2,0);
                 }
                 if (speed > 15){
                     player.setRemainingFireTicks(20);

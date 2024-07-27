@@ -4,14 +4,16 @@ import com.buuz135.salem.Salem;
 import com.buuz135.salem.SalemContent;
 import com.buuz135.salem.util.SalemRaidTier;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.Equipable;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 
-public class DeathlyChargersFeetItem extends SalemItem {
+public class DeathlyChargersFeetItem extends SalemItem implements Equipable {
 
     public DeathlyChargersFeetItem() {
         super(new Properties().fireResistant().stacksTo(1).rarity(Rarity.RARE), SalemRaidTier.EPIC);
@@ -25,5 +27,10 @@ public class DeathlyChargersFeetItem extends SalemItem {
                 EquipmentSlotGroup.ANY
                 );
         return modifiers;
+    }
+
+    @Override
+    public EquipmentSlot getEquipmentSlot() {
+        return EquipmentSlot.FEET;
     }
 }
