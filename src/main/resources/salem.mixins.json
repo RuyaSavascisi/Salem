@@ -8,10 +8,11 @@
     "CatRenderedMixin",
     "IZombieVillagerMixin",
     "MixinLivingEntity",
-    "ElytraPlayerMixin"
+    "ElytraPlayerMixin",
+    "AbstractPiglinMixin"
   ],
   "client": [
-    "ClientElytraMixin",
+    "ClientElytraMixin"
   ],
   "injectors": {
     "defaultRequire": 1
