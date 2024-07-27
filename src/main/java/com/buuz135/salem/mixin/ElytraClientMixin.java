@@ -5,14 +5,13 @@ import com.buuz135.salem.SalemContent;
 import com.buuz135.salem.util.InventoryFinderUtil;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 /**
  This was taken from Ars Nouveau https://github.com/baileyholl/Ars-Nouveau
  */
 @Mixin(LocalPlayer.class)
-public class ClientElytraMixin {
+public class ElytraClientMixin {
 
     @ModifyExpressionValue(
             method = "aiStep",

@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
  */
 
 @Mixin(LivingEntity.class)
-public class MixinLivingEntity {
+public class ElytraLivingEntityMixin {
 
     @ModifyExpressionValue(
             method = "updateFallFlying",

@@ -35,6 +35,8 @@ public class SalemContent {
     public static DeferredItem<Item> SCORCHING_AURA_RING = ITEMS.registerItem("scorching_aura_ring", properties -> new ScorchingAuraItem());
     public static DeferredItem<Item> HELLISH_BARGAIN_RING = ITEMS.registerItem("hellish_bargain_ring", properties -> new TrinketItem(Rarity.UNCOMMON, SalemRaidTier.RARE));
     public static DeferredItem<Item> TOME_OF_THE_DAMNED_CHARM = ITEMS.registerItem("tome_of_the_damned_charm", properties -> new TomeOfTheDamnedItem());
+    public static DeferredItem<Item> UNHALLOWED_CROSS = ITEMS.registerItem("unhallowed_cross_charm", properties -> new UnhallowedCrossItem());
+
 
     public static class DataComp{
 
@@ -42,6 +44,7 @@ public class SalemContent {
 
 
         public static Supplier<DataComponentType<Long>> TIME = register("time", () -> -1L, op -> op.persistent(Codec.LONG));
+        public static Supplier<DataComponentType<Integer>> AMOUNT = register("amount", () -> 0, op -> op.persistent(Codec.INT));
 
     }
 

@@ -46,6 +46,7 @@ public class Salem
                 output.accept(SalemContent.SCORCHING_AURA_RING.get());
                 output.accept(SalemContent.HELLISH_BARGAIN_RING.get());
                 output.accept(SalemContent.TOME_OF_THE_DAMNED_CHARM.get());
+                output.accept(SalemContent.UNHALLOWED_CROSS.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
