@@ -13,14 +13,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -57,7 +53,7 @@ public class BoneShieldItem extends TrinketItem{
     public static void playerTickEvent(PlayerTickEvent.Pre event){
         var player = event.getEntity();
         if (player.level().getGameTime() % 20 == 0){
-            ItemStack boneShield = InventoryFinderUtil.findFirst(player, SalemContent.BONE_SHIELD.asItem());
+            ItemStack boneShield = InventoryFinderUtil.findFirst(player, SalemContent.BONE_SHIELD_HANDS.asItem());
             if (!boneShield.isEmpty()) {
                 boneShield.set(SalemContent.DataComp.TIME, boneShield.getOrDefault(SalemContent.DataComp.TIME, 0L) + 1);
             }
@@ -67,7 +63,7 @@ public class BoneShieldItem extends TrinketItem{
     @SubscribeEvent
     public static void livingHurt(LivingDamageEvent.Pre event) {
         if (event.getEntity() instanceof Player player && event.getEntity().level() instanceof ServerLevel serverLevel){
-            ItemStack boneShield = InventoryFinderUtil.findFirst(player, SalemContent.BONE_SHIELD.asItem());
+            ItemStack boneShield = InventoryFinderUtil.findFirst(player, SalemContent.BONE_SHIELD_HANDS.asItem());
             if (!boneShield.isEmpty()) {
                 long time = boneShield.getOrDefault(SalemContent.DataComp.TIME, 0L);
                 double currentProtection = getCurrentDamageProtection(time);
