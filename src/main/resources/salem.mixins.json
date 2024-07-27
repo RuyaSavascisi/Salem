@@ -6,9 +6,12 @@
   "refmap": "Salem.refmap.json",
   "mixins": [
     "CatRenderedMixin",
-    "IZombieVillagerMixin"
+    "IZombieVillagerMixin",
+    "MixinLivingEntity",
+    "ElytraPlayerMixin"
   ],
   "client": [
+    "ClientElytraMixin",
   ],
   "injectors": {
     "defaultRequire": 1
