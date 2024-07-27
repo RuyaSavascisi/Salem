@@ -43,6 +43,7 @@ public class Salem
                 output.accept(SalemContent.CHILLING_AURA_NECKLACE.get());
                 output.accept(SalemContent.ETERNAL_FEAST_BELT.get());
                 output.accept(SalemContent.NIGHTMARISH_WINGS_BACK.get());
+                output.accept(SalemContent.SCORCHING_AURA_RING.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.

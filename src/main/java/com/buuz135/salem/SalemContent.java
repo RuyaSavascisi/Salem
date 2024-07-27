@@ -30,7 +30,7 @@ public class SalemContent {
     public static DeferredItem<Item> CHILLING_AURA_NECKLACE = ITEMS.registerItem("chilling_aura_necklace", properties -> new ChillingAuraItem());
     public static DeferredItem<Item> ETERNAL_FEAST_BELT = ITEMS.registerItem("eternal_feast_belt", properties -> new EternalFeastItem());
     public static DeferredItem<Item> NIGHTMARISH_WINGS_BACK = ITEMS.registerItem("nightmarish_wings_back", properties -> new NightmarishWingsItem());
-
+    public static DeferredItem<Item> SCORCHING_AURA_RING = ITEMS.registerItem("scorching_aura_ring", properties -> new ScorchingAuraItem());
 
     public static class DataComp{
 
