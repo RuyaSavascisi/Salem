@@ -1,5 +1,5 @@
 {
-  "itemGroup.salem.salem_tab": "Salem",
+  "itemGroup.salem": "Salem",
   "event.salem.raid.spawn": "Salem Raid Nearby",
   "event.salem.raid.clear": "Clear Nearby Enemies!",
   "event.salem.raid.damage": "Attack the boss!",
@@ -23,6 +23,12 @@
   "item.salem.unhallowed_cross_charm.tooltip": "Stores multiple Totems of Undying and uses them on death.",
   "item.salem.tome_of_the_damned_charm.tooltip": "Chance to charm undead mobs that attack you to fight on your side.",
   "item.salem.nightmarish_wings_back.tooltip": "Allows you to fly like an elytra does.",
+  "item.salem.common_raid_summoner": "Common Raid Summoner",
+  "item.salem.rare_raid_summoner": "Rare Raid Summoner",
+  "item.salem.epic_raid_summoner": "Epic Raid Summoner",
+  "item.salem.legendary_raid_summoner": "Legendary Raid Summoner",
+  "tooltip.salem.can_reward": "Can Reward:",
+  "tooltip.salem.only_night": "Can only be used at night",
   "config.salem.enable_random_raids": "Enable Random Raids",
   "config.salem.enable_random_raids.tooltip": "Enable random raids around players similar at how phantoms spawn"
 }

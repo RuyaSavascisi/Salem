@@ -10,7 +10,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 public class NightmarishWingsItem extends TrinketItem{
 
     public NightmarishWingsItem() {
-        super(Rarity.EPIC, SalemRaidTier.RARE);
+        super(Rarity.RARE, SalemRaidTier.EPIC);
     }
 
     @Override

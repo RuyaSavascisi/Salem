@@ -37,6 +37,10 @@ public class SalemContent {
     public static DeferredItem<Item> TOME_OF_THE_DAMNED_CHARM = ITEMS.registerItem("tome_of_the_damned_charm", properties -> new TomeOfTheDamnedItem());
     public static DeferredItem<Item> UNHALLOWED_CROSS = ITEMS.registerItem("unhallowed_cross_charm", properties -> new UnhallowedCrossItem());
     public static DeferredItem<Item> WITHERING_TOUCH_HAND = ITEMS.registerItem("withering_touch_hand", properties -> new WitheringTouchItem());
+    public static DeferredItem<Item> COMMON_RAID_SUMMONER = ITEMS.registerItem("common_raid_summoner", properties -> new SummonerItem(Rarity.COMMON, SalemRaidTier.COMMON));
+    public static DeferredItem<Item> RARE_RAID_SUMMONER = ITEMS.registerItem("rare_raid_summoner", properties -> new SummonerItem(Rarity.UNCOMMON, SalemRaidTier.RARE));
+    public static DeferredItem<Item> EPIC_RAID_SUMMONER = ITEMS.registerItem("epic_raid_summoner", properties -> new SummonerItem(Rarity.RARE, SalemRaidTier.EPIC));
+    public static DeferredItem<Item> LEGENDARY_RAID_SUMMONER = ITEMS.registerItem("legendary_raid_summoner", properties -> new SummonerItem(Rarity.EPIC, SalemRaidTier.LEGENDARY));
 
     public static class DataComp{
 
