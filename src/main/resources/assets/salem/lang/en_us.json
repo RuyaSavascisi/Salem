@@ -22,5 +22,7 @@
   "item.salem.withering_touch_hand.tooltip": "Grants wither damage immunity and has a chance to wither your enemies.",
   "item.salem.unhallowed_cross_charm.tooltip": "Stores multiple Totems of Undying and uses them on death.",
   "item.salem.tome_of_the_damned_charm.tooltip": "Chance to charm undead mobs that attack you to fight on your side.",
-  "item.salem.nightmarish_wings_back.tooltip": "Allows you to fly like an elytra does."
+  "item.salem.nightmarish_wings_back.tooltip": "Allows you to fly like an elytra does.",
+  "config.salem.enable_random_raids": "Enable Random Raids",
+  "config.salem.enable_random_raids.tooltip": "Enable random raids around players similar at how phantoms spawn"
 }

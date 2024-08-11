@@ -1,6 +1,7 @@
 package com.buuz135.salem.world;
 
 import com.buuz135.salem.SalemContent;
+import com.buuz135.salem.item.TrinketItem;
 import com.buuz135.salem.util.BlockUtil;
 import com.buuz135.salem.util.SalemRaidTier;
 import com.google.common.collect.Sets;
@@ -18,9 +19,11 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
 
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.scores.PlayerTeam;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
 
 import java.util.*;
 import java.util.function.Predicate;
@@ -169,8 +172,9 @@ public class SalemRaidSavedData extends SavedData {
             }
             if (!this.boss.isAlive()){
                 if (!hasRemoved){
-                    //TODO UPDATE FOR PLAYER AMOUNT ItemStack stack = new ItemStack(TrinketItem.TRINKETS.get(this.salemRaidTier).get(level.random.nextInt(TrinketItem.TRINKETS.get(this.salemRaidTier).size())));
-                    //Containers.dropItemStack(level, this.boss.getX(), this.boss.getY(), this.boss.getZ(), stack);
+                    this.raidEvent.getPlayers().forEach(serverPlayer -> {
+                        ItemHandlerHelper.giveItemToPlayer(serverPlayer, new ItemStack(TrinketItem.TRINKETS.get(this.salemRaidTier).get(level.random.nextInt(TrinketItem.TRINKETS.get(this.salemRaidTier).size()))));
+                    });
                 }
                 stop();
                 salemRaidSavedData.setDirty();

@@ -1,7 +1,8 @@
 package com.buuz135.salem;
 
-import com.buuz135.salem.util.InventoryFinderUtil;
+
 import com.buuz135.salem.world.SalemRaidSavedData;
+import com.buuz135.salem.world.SalemRaidSpawner;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -9,21 +10,24 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.entity.EntityTypeTest;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class CommonEvents {
+
+    public static HashMap<String, SalemRaidSpawner> RAID_SPAWNER = new LinkedHashMap<>();
 
     @SubscribeEvent
     public void serverTick(LevelTickEvent.Pre event){
         if (event.getLevel() instanceof ServerLevel serverLevel){
             SalemRaidSavedData.getData(serverLevel).tick();
             serverLevel.getEntities(EntityTypeTest.forClass(Mob.class), mob -> mob.hasEffect(SalemContent.Effect.SPAWN_EFFECT)).forEach(CommonEvents::salemSpawnCheck);
+            if (Config.ENABLE_RANDOM_RAIDS.get()) RAID_SPAWNER.computeIfAbsent(event.getLevel().dimension().location().toString(), s -> new SalemRaidSpawner()).tick(serverLevel);
         }
     }
 
