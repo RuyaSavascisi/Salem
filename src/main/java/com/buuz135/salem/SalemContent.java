@@ -36,7 +36,7 @@ public class SalemContent {
     public static DeferredItem<Item> HELLISH_BARGAIN_RING = ITEMS.registerItem("hellish_bargain_ring", properties -> new TrinketItem(Rarity.UNCOMMON, SalemRaidTier.RARE));
     public static DeferredItem<Item> TOME_OF_THE_DAMNED_CHARM = ITEMS.registerItem("tome_of_the_damned_charm", properties -> new TomeOfTheDamnedItem());
     public static DeferredItem<Item> UNHALLOWED_CROSS = ITEMS.registerItem("unhallowed_cross_charm", properties -> new UnhallowedCrossItem());
-
+    public static DeferredItem<Item> WITHERING_TOUCH_HAND = ITEMS.registerItem("withering_touch_hand", properties -> new WitheringTouchItem());
 
     public static class DataComp{
 
