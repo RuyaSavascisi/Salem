@@ -20,7 +20,7 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 public class ScorchingAuraItem extends TrinketItem{
 
     public ScorchingAuraItem() {
-        super(Rarity.RARE, SalemRaidTier.COMMON);
+        super(Rarity.COMMON, SalemRaidTier.COMMON);
     }
 
     @SubscribeEvent

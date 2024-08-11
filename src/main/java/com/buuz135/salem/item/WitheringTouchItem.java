@@ -24,7 +24,7 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 public class WitheringTouchItem extends TrinketItem{
 
     public WitheringTouchItem() {
-        super(Rarity.EPIC, SalemRaidTier.RARE);
+        super(Rarity.UNCOMMON, SalemRaidTier.RARE);
     }
 
     @SubscribeEvent
