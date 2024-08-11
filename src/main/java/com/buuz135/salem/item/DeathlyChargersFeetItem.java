@@ -32,8 +32,7 @@ public class DeathlyChargersFeetItem extends TrinketItem implements Equipable {
         var modifiers = super.getDefaultAttributeModifiers(stack);
         modifiers = modifiers.withModifierAdded(Attributes.MOVEMENT_SPEED,
                 new AttributeModifier(ResourceLocation.fromNamespaceAndPath(Salem.MODID, "deathly_chargers"), 0.1 + stack.getOrDefault(SalemContent.DataComp.TIME, 0L) * 0.1D, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-                EquipmentSlotGroup.ANY
-                );
+                EquipmentSlotGroup.ANY);
         return modifiers;
     }
 

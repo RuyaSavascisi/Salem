@@ -30,5 +30,6 @@
   "tooltip.salem.can_reward": "Can Reward:",
   "tooltip.salem.only_night": "Can only be used at night",
   "config.salem.enable_random_raids": "Enable Random Raids",
-  "config.salem.enable_random_raids.tooltip": "Enable random raids around players similar at how phantoms spawn"
+  "config.salem.enable_random_raids.tooltip": "Enable random raids around players similar at how phantoms spawn",
+  "curios.identifier.feet": "Feet"
 }
